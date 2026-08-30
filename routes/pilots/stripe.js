@@ -100,6 +100,7 @@ router.post('/payout', pilotRequired, async (req, res) => {
       {
         amount: amount,
         currency: currency,
+        method: 'instant',
         statement_descriptor: config.appName,
       },
       {
