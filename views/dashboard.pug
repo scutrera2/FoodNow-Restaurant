@@ -19,7 +19,7 @@ block content
     .user
       .block.profile
         .photo
-        p Delivery pilot since #{moment(pilot.created).format('MMM YYYY')}
+        p Delivery partner since #{moment(pilot.created).format('MMM YYYY')}
         h1 #{pilot.displayName()}
 
       .block.week
@@ -47,7 +47,7 @@ block content
         .no-rides
           .rocket
           h1 No deliveries to display yet
-          h2 Deliver some packages!
+          h2 Deliver some food!
       else
         .list
           each ride in rides
@@ -65,7 +65,7 @@ block footer
     form.right
       button.primary-action.next Next step
   .annotation.card.dashboard-simulate(class=(showBanner ? 'hidden' : ''))
-    h4 Simulate a delivery to create a payment for this pilot.
+    h4 Simulate a delivery to create a payment for this delivery partner.
     .description
       ol
         li The balance is automatically fetched from the Stripe API.
