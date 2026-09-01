@@ -26,10 +26,10 @@ block content
           .pilot-options
             label.pilot-option
               input(type='radio', name='pilot-type', value='individual', id='po-individual', checked=true)
-              span Independent pilot
+              span Independent delivery partner
             label.pilot-option
               input(type='radio', name='pilot-type', value='company', id='po-company')
-              span Company of pilots
+              span Company of delivery partners
 
           h4.pilot-header#account-info Personal information
           fieldset
@@ -105,13 +105,13 @@ block footer
 
     case step
       when 'account'
-        p To get started, FoodNow will create an account for their pilots on their own backend. The platform can use any kind of authentication here, like email or OAuth. A real product would typically have terms of service and a privacy policy linked here as well.
+        p To get started, FoodNow will create an account for their delivery partners on their own backend. The platform can use any kind of authentication here, like email or OAuth. A real product would typically have terms of service and a privacy policy linked here as well.
 
       when 'profile'
-        p The platform can choose to request additional information from the user before it collects any payments details. Here, Rocket Deliveries asks a few questions about pilots and their rockets. This information will be stored in the platform’s database.
+        p The platform can choose to request additional information from the user before it collects any payments details. Here, FoodNow asks a few questions about delivery partners and their vehicles. This information will be stored in the platform’s database.
 
       when 'verification'
         div
-          p This platform uses #[a(href='https://stripe.com/connect/account-types') Connect Custom] accounts to pay its pilots. To enable payouts, we'll need to verify their identity. This step can be skipped and performed at any time by the platform's user.
+          p This platform uses #[a(href='https://stripe.com/connect/account-types') Connect Custom] accounts to pay its delivery partners. To enable payouts, we'll need to verify their identity. This step can be skipped and performed at any time by the platform's user.
           br
           p In FoodNow, we collect the identity verification details with #[a(href='https://stripe.com/docs/connect/connect-onboarding') Connect Onboarding] .

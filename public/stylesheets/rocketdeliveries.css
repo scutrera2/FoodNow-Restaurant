@@ -2,6 +2,18 @@
  * Rocket Deliveries CSS stylesheet
  */
 
+:root {
+  --ink: #17191C;
+  --muted: #6B7076;
+  --accent: #E8502F;
+  --accent-ink: #FFFFFF;
+  --surface: #FFFFFF;
+  --bg: #F5F6F7;
+  --line: #E3E5E8;
+  --radius: 12px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -33,10 +45,10 @@ body {
   align-items: center;
   height: auto;
   min-height: 100vh;
-  color: #292f45;
-  background-color: #f6f9fc;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
+  color: var(--ink);
+  background-color: var(--bg);
+  font-family: var(--font);
+  font-size: 15px;
 }
 
 header,
@@ -59,9 +71,7 @@ section {
 
 header {
   width: 100%;
-  background-image: url('/images/header.jpg');
-  background-size: cover;
-  background-color: black;
+  background: var(--ink);
   color: #fff;
 }
 
@@ -125,12 +135,15 @@ a.arrow {
 }
 
 header .button.primary {
-  width: 200px;
+  width: auto;
+  max-width: 100%;
+  min-width: 260px;
 }
 
 h1.title {
   font-family: 'Barlow';
   font-weight: 500;
+  font-size: 28px;
   text-align: center;
   margin-top: 40px;
   margin-bottom: 25px;
@@ -142,13 +155,14 @@ h1.title.short-form {
 
 /* Banners */
 .banner {
-  background: #F8BF25;
+  background: var(--accent);
   color: white;
   width: 100%;
   min-height: 44px;
   line-height: 44px;
   text-shadow: 0px 1px 3px rgba(0,0,0,0.1);
   display: none;
+  font-size: 15px;
 }
 
 .banner.showing {
@@ -160,7 +174,7 @@ h1.title.short-form {
 }
 
 .banner.verify-pending {
-  background: #F8BF25;
+  background: var(--accent);
 }
 
 .banner.verify-complete {
@@ -194,7 +208,7 @@ footer {
 }
 
 .annotation h4 {
-  color: #525f7f;
+  color: var(--muted);
   font-size: 16px;
   font-weight: 500;
   width: 100%;
@@ -203,15 +217,15 @@ footer {
 
 .annotation ol {
   font-weight: 400;
-  font-size: 14px;
-  color: #525f7f;
+  font-size: 15px;
+  color: var(--muted);
   margin-left: 16px;
 }
 
 .annotation p {
   font-size: 15px;
   font-weight: 400;
-  color: #6a7c94;
+  color: var(--muted);
 }
 
 .annotation.info strong {
@@ -220,7 +234,7 @@ footer {
 
 .annotation a {
   font-weight: 400;
-  color: #666ee8;
+  color: var(--accent);
 }
 
 .annotation a.github {
@@ -248,8 +262,8 @@ footer {
 }
 
 .annotation.card p {
-  color: #51586d;
-  font-size: 14px;
+  color: var(--muted);
+  font-size: 15px;
 }
 
 .annotation.card p + p {
@@ -280,7 +294,7 @@ footer {
 }
 .annotation.card input[type='submit'].primary-action,
 .annotation.card button.primary-action {
-  background: #556cd6;
+  background: var(--accent);
   color: #fff;
 }
 
@@ -322,7 +336,7 @@ footer {
   margin-top: 15px;
   font-size: 15px;
   font-weight: 500;
-  color: #525f7f;
+  color: var(--muted);
   line-height: 1.5;
   text-align: center;
   animation: slide-in-vertical 0.5s cubic-bezier(0.23, 1, 0.32, 1) both 0.6s;
@@ -332,14 +346,14 @@ footer {
   margin: 30px 0 15px;
   font-size: 19px;
   font-weight: 500;
-  color: #32315e;
+  color: var(--ink);
   text-align: center;
 }
 
 .form p {
   margin: 0 0 30px;
   font-size: 17px;
-  color: #525f7f;
+  color: var(--muted);
   line-height: 1.5;
   text-align: center;
 }
@@ -350,8 +364,8 @@ footer {
 
 .form h4 {
   margin: 15px 0;
-  color: #8798ab;
-  font-size: 14px;
+  color: var(--muted);
+  font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -369,8 +383,8 @@ footer {
   width: 100%;
   margin-top: 10px;
   line-height: 20px;
-  font-size: 13px;
-  color: #8798ab;
+  font-size: 15px;
+  color: var(--muted);
   padding: 0 30px;
 }
 
@@ -397,9 +411,9 @@ form {
 form aside {
   margin: -30px auto 0;
   line-height: 1.3em;
-  font-size: 13px;
+  font-size: 15px;
   text-align: right;
-  color: #8798ab;
+  color: var(--muted);
 }
 
 fieldset {
@@ -428,9 +442,10 @@ fieldset .row::before {
   content: attr(label);
   width: 130px;
   padding-right: 20px;
-  color: #8798ab;
+  color: var(--muted);
   font-weight: 500;
   text-align: right;
+  font-size: 15px;
 }
 
 fieldset .row.select::after {
@@ -467,7 +482,7 @@ fieldset .row select {
 }
 
 fieldset .row select:focus {
-  color: #F8BF25;
+  color: var(--accent);
 }
 
 fieldset .row.date span {
@@ -523,17 +538,21 @@ a.button:active {
 button.primary,
 input[type='submit'].primary {
   font-family: 'Barlow';
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  background: #F8BF25;
-  color: white;
-  height: 44px;
+  letter-spacing: 0.5px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  height: auto;
+  min-height: 44px;
   margin: 30px 0 0 0;
-  padding: 0 22px;
-  line-height: 44px;
-  text-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+  padding: 10px 22px;
+  line-height: 1.3;
+  white-space: normal;
+  text-align: center;
+  text-shadow: none;
+  border-radius: var(--radius);
 }
 
 .button.primary:hover,
@@ -590,8 +609,8 @@ form a.button {
 }
 
 .stripe-information p {
-  color: #525f7f;
-  font-size: 14px;
+  color: var(--muted);
+  font-size: 15px;
   text-align: left;
   margin: 0;
 }
@@ -647,7 +666,7 @@ form a.button {
 }
 
 .intro h2 {
-  color: #cfd7df;
+  color: #d8dbde;
   margin: 15px 0;
   font-size: 20px;
   font-weight: 400;
@@ -692,14 +711,14 @@ form a.button {
   margin: 0 0 10px;
   font-size: 20px;
   font-weight: 500;
-  color: #32315e;
+  color: var(--ink);
   letter-spacing: 0.01em;
 }
 
 .features p {
   font-size: 16px;
   line-height: 24px;
-  color: #525f7f;
+  color: var(--muted);
 }
 
 /* User information */
@@ -725,21 +744,21 @@ form a.button {
 }
 
 .user .block h2 {
-  color: #8898aa;
-  font-size: 13px;
+  color: var(--muted);
+  font-size: 15px;
   font-weight: 500;
   margin-top: 8px;
 }
 
 .user .block p {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   margin-bottom: 7px;
-  color: #292f45;
+  color: var(--ink);
 }
 
 .user .block a {
-  color: #219f72;
+  color: var(--accent);
 }
 
 .user .block.profile {
@@ -803,7 +822,7 @@ form a.button {
   display: flex;
   position: relative;
   align-items: center;
-  color: #525f7f;
+  color: var(--muted);
   font-size: 15px;
   font-weight: 500;
   padding-left: 10px;
@@ -829,7 +848,7 @@ form a.button {
   right: calc(100% - 15px);
   width: 10px;
   height: 10px;
-  background: #F8BF25;
+  background: var(--accent);
   border-radius: 10px;
 }
 
@@ -846,8 +865,9 @@ form a.button {
 
 .rides h4 {
   margin-bottom: 14px;
-  color: #292f45;
+  color: var(--ink);
   font-weight: 500;
+  font-size: 18px;
 }
 
 .rides .no-rides {
@@ -875,8 +895,8 @@ form a.button {
 }
 
 .rides .no-rides h2 {
-  color: #8898aa;
-  font-size: 13px;
+  color: var(--muted);
+  font-size: 15px;
   font-weight: 500;
   text-align: center;
 }
@@ -903,7 +923,7 @@ form a.button {
   flex: 1;
   position: relative;
   padding: 15px 20px;
-  color: #82909b;
+  color: var(--muted);
   font-size: 15px;
 }
 
