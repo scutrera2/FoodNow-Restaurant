@@ -220,13 +220,12 @@ router.post('/rides', pilotRequired, async (req, res, next) => {
     // Add the Stripe charge reference to the ride and save it
     ride.stripeChargeId = charge.id;
     ride.save();
-  } catch (err) {
-    console.log(err);
-    // Return a 402 Payment Required error code
-    res.sendStatus(402);
-    next(`Error adding token to customer: ${err.message}`);
-  }
-  res.redirect('/pilots/dashboard');
+} catch (err) {
+  console.log(err);
+  // Return a 402 Payment Required error code
+  return res.status(402).send(`Error adding token to customer: ${err.message}`);
+}
+res.redirect('/pilots/dashboard');
 });
 
 /**
